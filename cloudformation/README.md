@@ -1,5 +1,24 @@
 # Drift Cloudformation Templates
 
+## Quick Start
+
+This tool enables a quick setup and maintenance of a VPC which is configured as following:
+
+ - VPC with public and private subnets (NAT) based on AWS's guidelines.
+ - The VPC network has a pretty CIDR block like `10.50.x.x`
+ - Three subnets: Two private for EC2 instances and hosted DB instances and one public.
+ - Internet gateway and NAT.
+ - VPC endpoint (to enable incoming connections from various [AWS services](https://docs.aws.amazon.com/vpc/latest/userguide/vpc-endpoints.html)).
+
+Example: `update-tier.bat MYTIER 10.30`
+
+
+#### YTBD: Add support for automatic provisioning of a VPN server, Postgres and Redis.
+
+
+
+# Details
+
 A single Drift tier is composed of several CFN templates. They use parameters to define specific behavior and export explicitly references to certain resources so there is no need to assume any naming convention of the resources themselves.
 
 All of them are agnostic to particular types of tiers so there should be no need to customize the templates themselves. 
